@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>NOVA CITY — Open World</title>
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{ "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
+</script>
+</head>
+<body>
+<canvas id="game"></canvas>
+
+<div id="hud">
+  <div class="money">$ <span id="money">0</span></div>
+  <div class="clock" id="clock">08:00</div>
+  <div class="clock" id="health">❤️ 100</div>
+  <div class="speed" id="speed"></div>
+  <div class="mission" id="mission"></div>
+</div>
+<div id="prompt"></div>
+<div id="toast"></div>
+<div id="dialog" style="position:fixed;left:50%;bottom:8%;transform:translateX(-50%);width:min(560px,90vw);background:#0d1220ee;border:1px solid #ffffff33;border-radius:12px;padding:14px 18px;color:#fff;display:none;z-index:15;">
+  <div id="dname" style="color:#ffd94d;font-weight:bold;margin-bottom:6px;"></div>
+  <div id="dtext" style="font-size:15px;line-height:1.6;"></div>
+  <div style="color:#8fa3c8;font-size:12px;margin-top:8px;">E — continuer</div>
+</div>
+<canvas id="minimap" width="160" height="160"></canvas>
+
+<div id="phone">
+  <div class="ptop">📱 NovaPhone</div>
+  <div class="pbody" id="pbody"></div>
+  <div class="ptabs">
+    <button data-tab="bank" class="on">Banque</button>
+    <button data-tab="missions">Missions</button>
+    <button data-tab="stats">Stats</button>
+    <button data-tab="immo">Immo</button>
+    <button data-tab="biz">Biz</button>
+    <button data-tab="social">Social</button>
+    <button data-tab="settings">Réglages</button>
+    <button data-tab="save">Sauvegarde</button>
+  </div>
+</div>
+
+<div id="menu" class="panel">
+  <div class="card">
+    <h1>NOVA CITY</h1>
+    <h2>Monde ouvert 3D — prototype jouable</h2>
+    <button id="btnNew">Nouvelle partie</button>
+    <button id="btnContinue">Continuer</button>
+    <div class="keys">
+      ZQSD/WASD : bouger &nbsp;•&nbsp; Souris : caméra (clic pour capturer)<br>
+      Maj : courir &nbsp;•&nbsp; Espace : sauter &nbsp;•&nbsp; E : interagir / véhicule<br>
+      Tab : téléphone &nbsp;•&nbsp; Échap : pause &nbsp;•&nbsp; H : klaxon
+    </div>
+  </div>
+</div>
+
+<div id="pause" class="panel" style="display:none;">
+  <div class="card">
+    <h1 style="font-size:26px;">PAUSE</h1>
+    <button id="btnResume">Reprendre</button>
+    <button id="btnSave">Sauvegarder</button>
+    <button id="btnLoad">Charger la sauvegarde</button>
+    <button id="btnMenu">Menu principal</button>
+    <div class="keys">La sauvegarde est automatique toutes les 30 secondes.</div>
+  </div>
+</div>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "nova-city-server",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Serveur multijoueur NOVA CITY (relais authentifié, non simulé)",
+  "main": "server.mjs",
+  "scripts": {
+    "start": "node server.mjs"
+  },
+  "dependencies": {
+    "ws": "^8.23.0"
+  }
+}
